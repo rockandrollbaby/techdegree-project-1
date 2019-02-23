@@ -1,55 +1,54 @@
-/******************************************
-Treehouse Techdegree:
-FSJS project 1 - A Random Quote Generator
-******************************************/
+var quotes = [{
+  quote: "The great gift of human beings is that we have the power of empathy",
+  source: "Meryl Streep",
+  date: "1988",
+},
+{
+  quote: "If you don't like something, change it. If you can't change it, change your attitude",
+  source:  "Maya Angelou",
+  citation: "https://www.goalcast.com/2017/04/03/maya-angelou-quotes-to-inspire-your-life/",
+},
+{
+  quote: "There are still many causes worth sacrificing for, so much history yet to be made",
+  source: "Michelle Obama",
+  citation: "https://www.brainyquote.com/authors/michelle_obama",
+},
+{
+  quote: "All that I am or hope to be, I owe to my angel mother",
+  source: "Abraham Lincoln",
+  citation: "https://www.goodreads.com/author/quotes/229.Abraham_Lincoln",
+},
+{
+  quote : "Ask not what your country can do for you, but what you can do for your country",
+  source: "John F. Kennedy",
+  date: "1962"
+}];
 
-// Study guide for this project - https://drive.google.com/file/d/1s5grutGuQFwJcQP8bFwEI69Q8FCkGdDk/view?usp=sharing
+function getRandomQuote(array) {
+  // Random number generator
+  var quoteIndex = Math.floor(Math.random() * (quotes.length));
 
+  for (var i = 0; i < array.length; i++) {
+// quotes.length is used to specify the length of the quote and where it ends.
+// array.length is used to add number to array.
 
-/*** 
-  Create the array of quote objects and name it `quotes`.
-  Add at least five quote objects to the `quotes` array.
-  Give each quote object a `quote` and `source` property.
+    var randomQuote = array[quoteIndex];
+    // Random quote variable with the index set to random number variable
+  }
+  return randomQuote; // Returns random quote variable
+}
 
-  Recommended: 
-    - Add at least one `year` and/or `citation` property to at least one 
-      quote object.
-***/
+function printQuote() {
+  var result = getRandomQuote();
+  console.log(result);
+  message =
+  '<p class="quote">' + result.quote + '</p>'
+  + '<p class="source">' + result.source + '</p>'
+  += '<span class="date">' + result.date + '</span>'
+  += '<span class="date">' + result.citation + '</span>'
+  + '</p>';
 
-
-
-
-/***
-  Create the `getRandomQuote` function to:
-   - generate a random number 
-   - use the random number to `return` a random quote object from the 
-     `quotes` array.
-***/
-
-
-
-
-/***
-  Create the `printQuote` function to: 
-   - call the `getRandomQuote` function and assign it to a variable.
-   - use the properties of the quote object stored in the variable to 
-     create your HTML string.
-   - use conditionals to make sure the optional properties exist before 
-     they are added to the HTML string.
-   - set the `innerHTML` of the `quote-box` div to the HTML string. 
-***/
-
-
-
-
-/***
-  When the "Show another quote" button is clicked, the event listener 
-  below will be triggered, and it will call, or "invoke", the `printQuote` 
-  function. So do not make any changes to the line of code below this 
-  comment.
-***/
+  document.getElementById('quote-box').innerHTML = message;
+}
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
-
-
-// Remember to delete the comments that came with this file, and replace them with your own code comments.
