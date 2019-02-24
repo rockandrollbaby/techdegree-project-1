@@ -1,7 +1,7 @@
 var quotes = [{
   quote: "The great gift of human beings is that we have the power of empathy",
   source: "Meryl Streep",
-  date: "1988",
+  year: "1988",
 },
 {
   quote: "If you don't like something, change it. If you can't change it, change your attitude",
@@ -21,12 +21,12 @@ var quotes = [{
 {
   quote : "Ask not what your country can do for you, but what you can do for your country",
   source: "John F. Kennedy",
-  date: "1962"
+  year: "1962"
 }];
 
 function getRandomQuote(array) {
   // Random number generator
-  var quoteIndex = Math.floor(Math.random() * (quotes.length));
+  var quoteIndex = Math.floor(Math.random() * (array.length));
 
   for (var i = 0; i < array.length; i++) {
 // quotes.length is used to specify the length of the quote and where it ends.
@@ -39,14 +39,12 @@ function getRandomQuote(array) {
 }
 
 function printQuote() {
-  var result = getRandomQuote();
+  var result = getRandomQuote(array);
   console.log(result);
-  message =
-  '<p class="quote">' + result.quote + '</p>'
-  + '<p class="source">' + result.source + '</p>'
-  += '<span class="date">' + result.date + '</span>'
-  += '<span class="date">' + result.citation + '</span>'
-  + '</p>';
+  message = '<p class="quote">' + result.quote + '</p>';
+  message += '<p class="source">' + result.source + '</p>';
+  message += '<span class="year">' + result.date + '</span>';
+  message += '<span class="citation">' + result.citation + '</span>';
 
   document.getElementById('quote-box').innerHTML = message;
 }
