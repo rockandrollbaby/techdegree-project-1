@@ -43,8 +43,6 @@ function printQuote() {
   var result = getRandomQuote(quotes);
   message = "<p class='quote'>" + result.quote + "</p>";
   message += "<p class='source'>" + result.source + "</p>";
-    document.getElementById('quote-box').innerHTML = message;
-    
   message += "<span class='year'>" + result.year + "</span>";
   if (quotes.year === undefined) {
     quotes.year = document.getElementsByClassName('year').innerHTML = ' ';
@@ -54,10 +52,9 @@ function printQuote() {
     quotes.citation = document.getElementsByClassName('citation').innerHTML = ' ';
   }
 
-
+  document.getElementById('quote-box').innerHTML = message;
 }
 
 printQuote();
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
-

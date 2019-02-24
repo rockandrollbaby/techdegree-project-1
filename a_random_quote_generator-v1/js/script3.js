@@ -2,26 +2,31 @@ var quotes = [{
   quote: "The great gift of human beings is that we have the power of empathy",
   source: "Meryl Streep",
   year: "1988",
+  citation: " ",
 },
 {
   quote: "If you don't like something, change it. If you can't change it, change your attitude",
   source:  "Maya Angelou",
+  year: " ",
   citation: "https://www.goalcast.com/2017/04/03/maya-angelou-quotes-to-inspire-your-life/",
 },
 {
   quote: "There are still many causes worth sacrificing for, so much history yet to be made",
   source: "Michelle Obama",
+  year: " ",
   citation: "https://www.brainyquote.com/authors/michelle_obama",
 },
 {
   quote: "All that I am or hope to be, I owe to my angel mother",
   source: "Abraham Lincoln",
+  year: " ",
   citation: "https://www.goodreads.com/author/quotes/229.Abraham_Lincoln",
 },
 {
   quote : "Ask not what your country can do for you, but what you can do for your country",
   source: "John F. Kennedy",
-  year: "1962"
+  year: "1962",
+  citation: " ",
 }];
 
 function getRandomQuote(array) {
@@ -39,25 +44,22 @@ function getRandomQuote(array) {
 }
 
 function printQuote() {
-  var message = "";
+  var message = " ";
   var result = getRandomQuote(quotes);
   message = "<p class='quote'>" + result.quote + "</p>";
   message += "<p class='source'>" + result.source + "</p>";
-    document.getElementById('quote-box').innerHTML = message;
-    
   message += "<span class='year'>" + result.year + "</span>";
   if (quotes.year === undefined) {
-    quotes.year = document.getElementsByClassName('year').innerHTML = ' ';
+    quotes.year = document.getElementsByClassName('year')[0].innerHTML = ' ';
   }
   message += "<span class='citation'>" + result.citation + "</span>";
   if (quotes.citation === undefined) {
-    quotes.citation = document.getElementsByClassName('citation').innerHTML = ' ';
+    quotes.citation = document.getElementsByClassName('citation')[0].innerHTML = ' ';
   }
 
-
+  document.getElementById('quote-box').innerHTML = message;
 }
 
 printQuote();
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
-
