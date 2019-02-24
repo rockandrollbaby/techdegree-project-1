@@ -52,9 +52,9 @@ function printQuote() {
   if (result.year) {
      message += "<span class='year'>" + result.year + "</span>";
 }
-  
+
   if (result.citation) {
-  message += "<span class='citation'>" + result.citation + "</span>";
+    message += "<span class='citation'>" + result.citation + "</span>";
 }
 + "</p>";
 
