@@ -48,14 +48,14 @@ function printQuote() {
   var result = getRandomQuote(quotes);
   message = "<p class='quote'>" + result.quote + "</p>";
   message += "<p class='source'>" + result.source;
-  message += "<span class='year'>" + result.year + "</span>";
-  if (quotes.year === undefined) {
-    quotes.year = document.getElementsByClassName('year')[0].innerHTML = ' ';
-  }
+
+  if (result.year) {
+     message += "<span class='year'>" + result.year + "</span>";
+}
+  
+  if (result.citation) {
   message += "<span class='citation'>" + result.citation + "</span>";
-  if (quotes.citation === undefined) {
-    quotes.citation = document.getElementsByClassName('citation')[0].innerHTML = ' ';
-  }
+}
 + "</p>";
 
   document.getElementById('quote-box').innerHTML = message;
