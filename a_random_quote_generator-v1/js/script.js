@@ -44,7 +44,13 @@ function printQuote() {
   message = '<p class="quote">' + result.quote + '</p>';
   message += '<p class="source">' + result.source + '</p>';
   message += '<span class="year">' + result.date + '</span>';
+  if (quotes.date === undefined) {
+    quotes.date = document.getElementByClassName('year').innerHTML = ' ';
+  }
   message += '<span class="citation">' + result.citation + '</span>';
+  if (quotes.citation === undefined) {
+    quotes.citation = document.getElementByClassName('year').innerHTML = ' ';
+  }
 
   document.getElementById('quote-box').innerHTML = message;
 }
