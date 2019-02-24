@@ -39,14 +39,16 @@ function getRandomQuote(array) {
 }
 
 function printQuote() {
-  var message = "";
+
   var result = getRandomQuote(quotes);
-  message = '<p class='quote'>' + result.quote + '</p>';
-  message += '<p class='source'>' + result.source + '</p>';
-  message += '<span class='year'>' + result.year + '</span>';
-  message += '<span class='citation'>' + result.citation + '</span>';
+  message = "<p class='quote'>" + result.quote + "</p>";
+  message += "<p class='source'>" + result.source + "</p>";
+  message += "<span class='year'>" + result.year + "</span>";
+  message += "<span class='citation'>" + result.citation + "</span>";
   
   document.getElementById('quote-box').innerHTML = message;
 }
 
 printQuote();
+
+document.getElementById('loadQuote').addEventListener("click", printQuote, false);

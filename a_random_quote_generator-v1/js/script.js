@@ -41,13 +41,13 @@ function getRandomQuote(array) {
 function printQuote() {
   var message = "";
   var result = getRandomQuote(quotes);
-  message = '<p class='quote'>' + result.quote + '</p>';
-  message += '<p class='source'>' + result.source + '</p>';
-  message += '<span class='year'>' + result.year + '</span>';
+  message = "<p class='quote'>" + result.quote + "</p>";
+  message += "<p class='source'>" + result.source + "</p>";
+  message += "<span class='year'>" + result.year + "</span>";
   if (quotes.year === undefined) {
     quotes.year = document.getElementsByClassName('year').innerHTML = ' ';
   }
-  message += '<span class='citation'>' + result.citation + '</span>';
+  message += "<span class='citation'>" + result.citation + "</span>";
   if (quotes.citation === undefined) {
     quotes.citation = document.getElementsByClassName('citation').innerHTML = ' ';
   }
