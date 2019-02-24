@@ -1,3 +1,5 @@
+// created a quotes array with quote object literals to hold various famous quotes
+
 var quotes = [{
   quote: "The great gift of human beings is that we have the power of empathy",
   source: "Meryl Streep",
@@ -24,12 +26,13 @@ var quotes = [{
   year: "1962",
 }];
 
+// created a function to get a random quote from the quotes array using array as a perimeter
+
 function getRandomQuote(array) {
   // Random number generator
   var quoteIndex = Math.floor(Math.random() * (array.length));
 
   for (var i = 0; i < array.length; i++) {
-// quotes.length is used to specify the length of the quote and where it ends.
 // array.length is used to add number to array.
 
     var randomQuote = array[quoteIndex];
@@ -37,6 +40,10 @@ function getRandomQuote(array) {
   }
   return randomQuote; // Returns random quote variable
 }
+
+// created a function to print the quotes based on whether a year or citation exists using two conditional statements
+// quote, source, year and citation are properties on the result object.
+// the quotes aray is passed to the getRandomQuote, is called and goes into the result variable.
 
 function printQuote() {
   var message = " ";
@@ -57,5 +64,7 @@ function printQuote() {
 }
 
 printQuote();
+
+// added a button to generate a random quote and display it to the page
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
