@@ -44,17 +44,9 @@ function printQuote() {
   message = '<p class='quote'>' + result.quote + '</p>';
   message += '<p class='source'>' + result.source + '</p>';
   message += '<span class='year'>' + result.year + '</span>';
-  if (quotes.year === undefined) {
-    quotes.year = document.getElementsByClassName('year').innerHTML = ' ';
-  }
   message += '<span class='citation'>' + result.citation + '</span>';
-  if (quotes.citation === undefined) {
-    quotes.citation = document.getElementsByClassName('citation').innerHTML = ' ';
-  }
-
+  
   document.getElementById('quote-box').innerHTML = message;
 }
 
 printQuote();
-
-document.getElementById('loadQuote').addEventListener("click", printQuote, false);
